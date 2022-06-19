@@ -16,6 +16,13 @@ class ProductController extends Controller
         return view('guest.products', compact('products', 'categories', 'category'));
     }
 
+    public function allProducts()
+    {
+        $products = Product::paginate(6);
+        $categories = Category::all();
+        return view('guest.all-products', compact('categories', 'products'));
+    }
+
     public function products()
     {
         $products = Product::paginate(6);
@@ -32,7 +39,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'product_name' => 'required',
-            'product_price' => 'required',
+            'product_price' => 'required|numeric',
             'product_desc' => 'required',
             'category' => 'required',
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg',
@@ -73,7 +80,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'product_name' => 'required',
-            'product_price' => 'required',
+            'product_price' => 'required|numeric',
             'product_desc' => 'required',
             'category' => 'required',
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg',

@@ -62,7 +62,14 @@
                         </a>    
                     </div>
                 @empty
-                    
+                    <div class="empty">
+                        <div class="empty-img"><img src="{{ asset('tabler/static/illustrations/undraw_quitting_time_dm8t.svg') }}" height="128"  alt="">
+                        </div>
+                        <p class="empty-title">Categories are managed from here</p>
+                        <p class="empty-subtitle text-muted">
+                            Seems your store is empty!
+                        </p>
+                    </div>
                 @endforelse
             </div>
         </div>

@@ -35,11 +35,12 @@
                             <tr>
                                 <th scope="row">
                                     {{ $item->products->product_name }}
-                                    {{ $item->products->product_desc }}
+                                    <br>
+                                    <p>{{ $item->products->product_desc }}</p>
                                 </th>
                                 <td>{{ $item->item_count}}</td>
-                                <td>{{ $item->price }}</td>
-                                <td class="item_total text-right">{{ $item->item_total() }}</td>
+                                <td>${{ $item->price }}</td>
+                                <td class="text-right">$<span class="item_total">{{ $item->item_total() }}</span></td>
                             </tr>
                         @empty
                             <tr>

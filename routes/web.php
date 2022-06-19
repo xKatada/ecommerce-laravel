@@ -35,6 +35,7 @@ Route::get('/contact-us', function(){
 })->name('contact');
 
 Route::get('/guest/products/{id}', [App\Http\Controllers\ProductController::class, 'index'])->name('products.index');
+Route::get('/guest/products/', [App\Http\Controllers\ProductController::class, 'allProducts'])->name('products.all');
 Route::controller(CartController::class)->group(function () {
     Route::get('/guest/cart', 'index')->name('cart.index');
     Route::get('/guest/product/{id}', 'show')->name('product.details');

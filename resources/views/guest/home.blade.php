@@ -32,7 +32,7 @@
             <div class="col-md-12">
                 <div class="section-heading">
                     <h2>Featured Products</h2>
-                    <a href="products.html">view more <i class="fa fa-angle-right"></i></a>
+                    <a href="{{ route('products.all') }}">view more <i class="fa fa-angle-right"></i></a>
                 </div>
             </div>
             @forelse ($products as $product)
@@ -53,6 +53,11 @@
                     <h5>We will notify you once we have the items that you need. Thank you!</h5>
                 </div>
             @endforelse
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {{ $products->links() }}
+            </div>
         </div>
     </div>
 </div>

@@ -18,6 +18,7 @@
                     <li class="nav-item dropdown {{ Route::currentRouteName() == 'products.index' ? 'active' : '' }}">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Products</a>
                         <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('products.all') }}">All</a>
                             @foreach ($categories as $category)
                                 <a class="dropdown-item" href="{{ route('products.index', $category->id) }}">{{ $category->category }}</a>
                             @endforeach
